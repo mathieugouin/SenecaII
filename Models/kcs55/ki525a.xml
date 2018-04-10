@@ -172,7 +172,7 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <type>knob</type>
     <object-name>OBSSelector</object-name>
     <property alias="../../params/selected-course"/>
     <factor>-8.0</factor>
@@ -186,23 +186,25 @@
       <y-m>-0.0309671</y-m>
       <z-m>-0.0274502</z-m>
     </center>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>OBSSelector</object-name>
-    <property alias="../../params/indicated-heading"/>
-    <factor>8.0</factor>
-    <axis>
-      <x>1.0</x>
-      <y>0.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>0</x-m>
-      <y-m>-0.0309671</y-m>
-      <z-m>-0.0274502</z-m>
-    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-course"/>
+        <factor>1</factor>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Course: %3d</label>
+        <tooltip-id>obs-selector</tooltip-id>
+        <mapping>heading</mapping>
+        <property alias="../../../../params/selected-course"/>
+      </binding>
+    </hovered>
   </animation>
 
   <animation>
@@ -247,96 +249,6 @@
       <y-m>0</y-m>
       <z-m>0</z-m>
     </center>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.L</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelector</object-name>
-    <visible>true</visible>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
   </animation>
 
   <animation>
