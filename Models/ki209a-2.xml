@@ -171,7 +171,7 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <type>knob</type>
     <object-name>OBSSelector</object-name>
     <property alias="../../params/selected-radial"/>
     <factor>8.0</factor>
@@ -185,96 +185,25 @@
       <y-m>-0.0318071</y-m>
       <z-m>-0.0327009</z-m>
     </center>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.L</object-name>
-    <visible>false</visible>
     <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property alias="../../../../params/selected-radial"/>
-        <step>1</step>
+        <factor>1</factor>
         <min>0</min>
         <max>360</max>
-        <wrap>1</wrap>
+        <wrap>true</wrap>
       </binding>
     </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
+    <hovered>
       <binding>
-        <command>property-adjust</command>
+        <command>set-tooltip</command>
+        <label>OBS: %3d</label>
+        <tooltip-id>nav2-obs-selector</tooltip-id>
+        <mapping>heading</mapping>
         <property alias="../../../../params/selected-radial"/>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
       </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelector</object-name>
-    <visible>true</visible>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
+    </hovered>
   </animation>
 
 </PropertyList>
