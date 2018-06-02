@@ -516,134 +516,71 @@
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>FreqPickLeft</object-name>
-        <visible>false</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>-1</step>
-                <min>200</min>
-                <max>1800</max>
-                <resolution>1</resolution>
-                <wrap>true</wrap>
-            </binding>
-        </action>
-        <action>
-            <button>1</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>-100</step>
-                <min>200</min>
-                <max>1800</max>
-                <wrap>true</wrap>
-                <mask>integer</mask>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>FreqPickRight</object-name>
-        <visible>false</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>1</step>
-                <min>200</min>
-                <max>1800</max>
-                <resolution>1</resolution>
-                <wrap>true</wrap>
-            </binding>
-        </action>
-        <action>
-            <button>1</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>100</step>
-                <min>200</min>
-                <max>1800</max>
-                <wrap>true</wrap>
-                <mask>integer</mask>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>FRQOuter</object-name>
+        <type>knob</type>
         <object-name>FRQInner</object-name>
-        <visible>true</visible>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>-0.33714</x-m>
+            <y-m> 0.17663</y-m>
+            <z-m>-0.01618</z-m>
+        </center>
         <action>
-            <button>3</button>
-            <repeatable>false</repeatable>
             <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
                 <command>property-adjust</command>
                 <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>-100</step>
-                <min>200</min>
-                <max>1800</max>
-                <resolution>1</resolution>
-                <wrap>true</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
-                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>-1</step>
+                <factor>1</factor>
                 <min>200</min>
                 <max>1800</max>
                 <resolution>1</resolution>
                 <wrap>true</wrap>
             </binding>
         </action>
-        <action>
-            <button>4</button>
-            <repeatable>false</repeatable>
+        <hovered>
             <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
+                <command>set-tooltip</command>
+                <tooltip-id>adf-kHz</tooltip-id>
+                <label>ADF stanby frequency %d kHz</label>
                 <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>1</step>
-                <min>200</min>
-                <max>1800</max>
-                <wrap>true</wrap>
-                <mask>integer</mask>
             </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>FRQOuter</object-name>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>-0.33714</x-m>
+            <y-m> 0.17663</y-m>
+            <z-m>-0.01618</z-m>
+        </center>
+        <action>
             <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
                 <command>property-adjust</command>
                 <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
-                <step>100</step>
+                <factor>100</factor>
                 <min>200</min>
                 <max>1800</max>
+                <resolution>1</resolution>
                 <wrap>true</wrap>
-                <mask>integer</mask>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>adf-kHz</tooltip-id>
+                <label>ADF stanby frequency %d kHz</label>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+            </binding>
+        </hovered>
     </animation>
 
 </PropertyList>
