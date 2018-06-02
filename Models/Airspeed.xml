@@ -59,22 +59,6 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>Airspeed.Knob</object-name>
-        <property alias="../../params/tas-face-rotation"/>
-        <factor>5</factor>
-        <axis>
-            <x>1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <center>
-          <x-m>0</x-m>
-          <y-m>0.0289782</y-m>
-          <z-m>-0.0293967</z-m>
-        </center>
-    </animation>
-    <animation>
-        <type>rotate</type>
         <object-name>Airspeed.Needle</object-name>
         <property alias="../../params/indicated-speed-kts"/>
         <interpolation include="AirspeedInterpolation.xml"/>
@@ -86,87 +70,39 @@
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>KnobPick.L</object-name>
-        <visible>false</visible>
-        <action>
-          <button>0</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>-1</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
-        </action>
-        <action>
-          <button>1</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>-10</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>KnobPick.R</object-name>
-        <visible>false</visible>
-        <action>
-          <button>0</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>1</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
-        </action>
-        <action>
-          <button>1</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>10</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Airspeed.Knob</object-name>
+        <type>knob</type>
         <visible>true</visible>
+        <object-name>Airspeed.Knob</object-name>
+        <property alias="../../params/tas-face-rotation"/>
+        <factor>5</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.0289782</y-m>
+            <z-m>-0.0293967</z-m>
+        </center>
         <action>
-          <button>3</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>-1</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
+            <binding>
+                <command>property-adjust</command>
+                <property alias="../../../../params/tas-face-rotation"/>
+                <factor>1</factor>
+                <min>-10</min>
+                <max>100</max>
+                <wrap>false</wrap>
+            </binding>
         </action>
-        <action>
-          <button>4</button>
-          <repeatable>true</repeatable>
-          <binding>
-            <command>property-adjust</command>
-            <property alias="../../../../params/tas-face-rotation"/>
-            <step>1</step>
-            <min>-10</min>
-            <max>100</max>
-          </binding>
-        </action>
+        <hovered>
+            <binding>
+                <tooltip-id>tas-face-rotation</tooltip-id>
+                <command>set-tooltip</command>
+                <label>Airspeed Offset: %d Kts</label>
+                <property alias="../../../../params/tas-face-rotation"/>
+            </binding>
+        </hovered>
     </animation>
 
 </PropertyList>

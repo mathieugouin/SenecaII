@@ -97,87 +97,27 @@
   </animation>
 
   <animation>
-    <type>pick</type>
-    <object-name>Knob.Pick.L</object-name>
+    <type>knob</type>
+    <object-name>Pick</object-name>
     <visible>false</visible>
     <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property alias="../../../../params/bug"/>
-        <step>-5</step>
+        <factor>5</factor>
         <min>1200</min>
         <max>1700</max>
-        <wrap>0</wrap>
+        <wrap>false</wrap>
       </binding>
     </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
+    <hovered>
       <binding>
-        <command>property-adjust</command>
+        <command>set-tooltip</command>
+        <label>EGT Bug: %4d</label>
+        <tooltip-id>egt-bug</tooltip-id>
         <property alias="../../../../params/bug"/>
-        <step>-50</step>
-        <min>1200</min>
-        <max>1700</max>
-        <wrap>0</wrap>
       </binding>
-    </action>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/bug"/>
-        <step>-5</step>
-        <min>1200</min>
-        <max>1770</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>Knob.Pick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/bug"/>
-        <step>5</step>
-        <min>1200</min>
-        <max>1700</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/bug"/>
-        <step>50</step>
-        <min>1200</min>
-        <max>1700</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/bug"/>
-        <step>5</step>
-        <min>1200</min>
-        <max>1700</max>
-        <wrap>0</wrap>
-      </binding>
-    </action>
+    </hovered>
   </animation>
 
 </PropertyList>
