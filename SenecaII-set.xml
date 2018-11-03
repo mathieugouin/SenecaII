@@ -55,6 +55,7 @@
         <aero>SenecaII-jsbsim</aero>
         <model>
             <path>Aircraft/SenecaII/Models/SenecaII.xml</path>
+            <fallback-model-index type="int">54</fallback-model-index>
             <livery>
               <file type="string">D-GEAR</file>
             </livery>
